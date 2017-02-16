@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 04:38:15 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/02/16 04:28:34 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/02/16 04:37:24 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ int			ft_parser(const char *format, t_form **form)
 			ft_lsadd(form, ft_new_form());
 			ft_flags_width_precision(format, form, &i);
 			ft_modifier(format, form, &i);
+			ft_get_types(format, form, &i);
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 22:49:46 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/02/16 04:16:17 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/02/16 04:38:08 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ t_form	*ft_new_form(void);
 int		ft_parser(const char *format, t_form **form);
 void	ft_flags_width_precision(const char *format, t_form **form, int *i);
 void 	ft_lsadd(t_form **form, t_form *bite);
+void 	ft_get_types(format, form, &i);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 22:47:27 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/02/16 04:23:00 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/02/16 04:47:32 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,29 @@ void ft_printlst(t_form *form)
 		printf("precision = [%d]\n", tmp->precision);
 		printf("modifier = [%d]\n\n", tmp->modifier);
 		tmp = tmp->next;
+	}
+}
+
+/* A CONTINUER */
+
+void ft_get_types(const char *format, t_form **form, int *i)
+{
+	while (format[*i] != '\0')
+	{
+		if (format[*i] == 'd' || format[*i] == 'i')
+			(*form)->types = 1;
+		if (format[*i] == 'd' || format[*i] == 'i')
+			(*form)->types = 1;
+		if (format[*i] == 'd' || format[*i] == 'i')
+			(*form)->types = 1;
+		if (format[*i] == 'd' || format[*i] == 'i')
+			(*form)->types = 1;
+		if (format[*i] == 'd' || format[*i] == 'i')
+			(*form)->types = 1;
+		if (format[*i] == 'd' || format[*i] == 'i')
+			(*form)->types = 1;
+		if (format[*i] == 'd' || format[*i] == 'i')
+			(*form)->types = 1;
 	}
 }
 
