@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 22:49:46 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/01/26 04:51:49 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/02/16 04:16:17 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ typedef struct		s_form
 	int				types;
 	int				flags[5];
 	int				width;
-	int				presision;
+	int				precision;
 	int				modifier;
 	struct s_form	*next;
 }					t_form;
 
 int		ft_printf(const char *format, ...);
-t_form	*ft_init_form(void);
+t_form	*ft_new_form(void);
 int		ft_parser(const char *format, t_form **form);
 void	ft_flags_width_precision(const char *format, t_form **form, int *i);
+void 	ft_lsadd(t_form **form, t_form *bite);
 
 #endif
