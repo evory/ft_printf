@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 22:47:27 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/02/17 05:18:14 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/02/20 16:48:23 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,19 @@ int		ft_printf(const char *format, ...)
 	va_list	ap;
 	t_form	*form;
 	int		ret;
+	int		i;
 
 	form = NULL;
 	va_start(ap, format);
 	ret = ft_parser(format, &form);
 	ft_printlst(form);
+	// while (form->next != NULL)
+	// {
+	// if (format[1] == 'i')
+	i = va_arg(ap, int);
+	printf("......%d......\n", i);
+	// form = form->next;
+	// }
 	printf("%d\n", ret);
 	return (ret);
 }

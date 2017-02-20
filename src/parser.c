@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 04:38:15 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/02/17 05:29:14 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/02/20 16:48:24 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void		ft_modifier(const char *format, t_form **form, int *i)
 		(*form)->modifier = 5;
 	if (format[*i] == 'z')
 		(*form)->modifier = 6;
-	(*i)++;
+	if ((*form)->modifier > 0)
+		(*i)++;
 }
 
 static void	ft_precision(const char *format, t_form **form, int *i)
@@ -53,6 +54,7 @@ static void	ft_width(const char *format, t_form **form, int *i)
 		(*form)->width = (*form)->width * 10 + (format[*i] - 48);
 		(*i)++;
 	}
+	(*i)--;
 }
 
 void		ft_flags_width_precision(const char *format, t_form **form, int *i)
@@ -76,25 +78,31 @@ void		ft_flags_width_precision(const char *format, t_form **form, int *i)
 			ft_precision(format, form, i);
 		(*i)++;
 	}
-	(*i)--;
 }
 
 int			ft_parser(const char *format, t_form **form)
 {
 	int i;
+	int j;
 
 	i = 0;
+	j = 1;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
 			ft_lsadd(form, ft_new_form());
+			printf("*%c*\n", format[i]);
 			ft_flags_width_precision(format, form, &i);
+			printf("**%c**\n", format[i]);
 			ft_modifier(format, form, &i);
+			printf("***%c***\n", format[i]);
 			ft_get_types(format, form, &i);
+			printf("****%c****\n", format[i]);
 		}
 		ft_putchar(format[i]);
 		i++;
+		j++;
 	}
-	return (i);
+	return (j);
 }
