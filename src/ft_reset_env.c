@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 20:07:27 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/02/22 20:39:30 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/02/23 16:47:18 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ t_env	*ft_init_env(void)
 
 	if(!(env = malloc(sizeof(t_env))))
 		return (NULL);
-	env->lsttypes = "sSpdDioOuUxXcC%";
-	env->lstmdfr = "hljz";
+	env->lsttype = "sSpdDioOuUxXcC%";
 	env->i = 0;
 	env->size = 0;
 	env->flags[0] = 0;

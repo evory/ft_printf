@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 17:46:36 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/02/22 19:36:20 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/02/23 17:08:06 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ int main(int argc, char const *argv[])
 	int	i;
 
 	i = 42;
-	ft_printf("TEST = %c", i);
+	ft_printf("TEST = %+-12.3hhd", i);
 	return 0;
 }

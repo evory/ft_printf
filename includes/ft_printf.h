@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 22:49:46 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/02/22 20:39:23 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/02/23 17:07:11 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@
 
 typedef	struct		s_env
 {
-	char			*lsttypes;
-	char			*lstmdfr;
+	char			*lsttype;
 	int				i;
 	int				size;
 	int				flags[5];
@@ -39,4 +38,6 @@ void				ft_check_all_flags(const char *format, t_env *env);
 void				ft_check_flags(const char *format, t_env *env);
 void				ft_check_width_precision(const char *format, t_env *env);
 void				ft_check_modifier(const char *format, t_env *env);
+void 				ft_prinfarg(t_env *env);
+
 #endif
