@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 17:02:02 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/02/23 17:07:10 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/03/21 20:23:00 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ int		ft_parser(const char *format, t_env *env, va_list ap)
 {
 	while (format[env->i] != '\0')
 	{
-		// printf("***%c***\n",format[env->i]);
 		if (format[env->i] == '%')
 		{
 			env->i++;
 			ft_clean_env(env);
 			ft_check_all_flags(format, env);
-			// ft_doit();
+			ft_doit(env, ap);
 		}
+		ft_putchar(format[env->i]);
 		env->i++;
 	}
 	return (0);
@@ -45,6 +45,7 @@ int		ft_printf(const char * format, ...)
 void ft_prinfarg(t_env *env)
 {
 	printf("env->i    = [%d]\n", env->i);
+	printf("env->size = [%d]\n", env->size);
 	printf("flag[0]   = [%d]\n", env->flags[0]);
 	printf("flag[1]   = [%d]\n", env->flags[1]);
 	printf("flag[2]   = [%d]\n", env->flags[2]);

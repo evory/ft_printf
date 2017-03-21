@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 17:17:00 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/02/23 17:07:14 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/03/21 20:52:12 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_check_type(const char *format, t_env *env)
 	int	j;
 
 	j = 0;
+	printf("%c\n", format[env->i]);
 	while (env->lsttype[j] != '\0')
 	{
 		if (env->lsttype[j] == format[env->i])
@@ -70,18 +71,20 @@ void	ft_check_width_precision(const char *format, t_env *env)
 
 void	ft_check_flags(const char *format, t_env *env)
 {
-	while (format[env->i] < 49 && format[env->i] != '.')
+	while (format[env->i] < '1' && format[env->i] != '.')
 	{
 		if (format[env->i] == '0')
 			env->flags[0] = 1;
-		if (format[env->i] == '#')
+		else if (format[env->i] == '#')
 			env->flags[1] = 1;
-		if (format[env->i] == '+')
+		else if (format[env->i] == '+')
 			env->flags[2] = 1;
-		if (format[env->i] == '-')
+		else if (format[env->i] == '-')
 			env->flags[3] = 1;
-		if (format[env->i] == ' ')
+		else if (format[env->i] == ' ')
 			env->flags[4] = 1;
+		else
+			break ;
 		env->i++;
 	}
 }
@@ -90,7 +93,9 @@ void	ft_check_all_flags(const char *format, t_env *env)
 {
 
 		printf("*%c*\n",format[env->i]);
+		printf("before %d\n", env->i);
 		ft_check_flags(format, env);
+		printf("after %d\n", env->i);
 		printf("**%c**\n",format[env->i]);
 		ft_check_width_precision(format, env);
 		printf("***%c***\n",format[env->i]);

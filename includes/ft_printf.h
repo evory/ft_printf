@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 22:49:46 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/02/23 17:07:11 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/03/21 20:17:08 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ void				ft_check_flags(const char *format, t_env *env);
 void				ft_check_width_precision(const char *format, t_env *env);
 void				ft_check_modifier(const char *format, t_env *env);
 void 				ft_prinfarg(t_env *env);
+void				ft_doit(t_env *env, va_list ap);
+void				ft_flags(t_env *env, va_list ap);
 
 #endif
