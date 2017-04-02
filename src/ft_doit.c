@@ -48,7 +48,11 @@ void ft_precision(t_env *env, va_list ap)
 */
 void	ft_doit(t_env *env, va_list ap)
 {
-	if (env->flags > 0)
+	int nbflags;
+
+	nbflags = env->flags[0] + env->flags[1] + env->flags[2] + env->flags[3]
+	+ env->flags[4];
+	if (nbflags > 0)
 		ft_flags(env, ap);
 	// if (env->width > 0)
 		// ft_width(env, ap);

@@ -34,11 +34,11 @@ t_env	*ft_init_env(void)
 	env->lsttype = "sSpdDioOuUxXcC%";
 	env->i = 0;
 	env->size = 0;
-	env->flags[0] = 0;
-	env->flags[1] = 0;
-	env->flags[2] = 0;
-	env->flags[3] = 0;
-	env->flags[4] = 0;
+	// env->flags[0] = 0;
+	// env->flags[1] = 0;
+	// env->flags[2] = 0;
+	// env->flags[3] = 0;
+	// env->flags[4] = 0;
 	env->width = 0;
 	env->precision = 0;
 	env->modifier = 0;

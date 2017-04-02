@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bbrandt <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/22 17:46:36 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/03/21 20:52:11 by bbrandt          ###   ########.fr       */
+/*   Created: 2016/12/08 14:26:48 by bbrandt           #+#    #+#             */
+/*   Updated: 2017/01/11 17:54:01 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include "libft.h"
+# include <fcntl.h>
+# define BUFF_SIZE 32
 
-int main(int argc, char const *argv[])
-{
-	int	i;
-	char *str;
+int		get_next_line(const int fd, char **line);
 
-	str = "coucou";
-	i = -42;
-	ft_printf("TEST = %20.55c\n");
-	printf("printf02.04 = [%7s]\n", str);
-	printf("printf02.04 = [%5d]\n", i);
-
-	return (0);
-}
+#endif

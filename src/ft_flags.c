@@ -45,7 +45,7 @@ void ft_flags(t_env *env, va_list ap)
 		ft_flags2(env, ap);
 	if (env->flags[3] == 1) // A FAIRE A LA FIN ET PAS ICI ?
 		ft_flags3(env, ap);
-	if (env->flags[4] == 1) // ' '
+	if (env->flags[4] == 1)
 		{
 			if (ap < 0)
 				ft_putchar('-');

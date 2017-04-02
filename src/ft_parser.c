@@ -17,7 +17,6 @@ void	ft_check_type(const char *format, t_env *env)
 	int	j;
 
 	j = 0;
-	printf("%c\n", format[env->i]);
 	while (env->lsttype[j] != '\0')
 	{
 		if (env->lsttype[j] == format[env->i])
@@ -92,15 +91,8 @@ void	ft_check_flags(const char *format, t_env *env)
 void	ft_check_all_flags(const char *format, t_env *env)
 {
 
-		printf("*%c*\n",format[env->i]);
-		printf("before %d\n", env->i);
 		ft_check_flags(format, env);
-		printf("after %d\n", env->i);
-		printf("**%c**\n",format[env->i]);
 		ft_check_width_precision(format, env);
-		printf("***%c***\n",format[env->i]);
 		ft_check_modifier(format, env);
-		printf("****%c****\n",format[env->i]);
 		ft_check_type(format, env);
-		printf("*****%c*****\n",format[env->i]);
 }
