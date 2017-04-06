@@ -6,7 +6,7 @@
 /*   By: bbrandt <bbrandt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 16:39:04 by bbrandt           #+#    #+#             */
-/*   Updated: 2017/03/21 20:52:12 by bbrandt          ###   ########.fr       */
+/*   Updated: 2017/04/06 17:46:17 by bbrandt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void ft_precision(t_env *env, va_list ap)
 	}
 }
 */
+
 void	ft_doit(t_env *env, va_list ap)
 {
 	int nbflags;
